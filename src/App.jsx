@@ -161,6 +161,17 @@ export default function MikroTikPortal() {
       notes: '8-Port PoE Desktop-Switch mit 120W Budget',
     },
     // ── CRS3xx — Desktop ───────────────────────────────────────────────────
+    'CRS310': {
+      name: 'CRS310-8G+2S+IN', sku: 'CRS310-8G+2S+IN', category: 'crs-2_5g', color: '#10B981',
+      msrp: 199, status: 'current',
+      ports: '8x 2.5G RJ45 + 2x SFP+', portCount: 10,
+      ethernet1g: 0, ethernet2_5g: 8, ethernet10g: 0, sfpPlus: 2, sfp28: 0,
+      poe: null, poeBudget: 0, layer: 'L2+',
+      switchChip: 'Marvell 98DX3255', routerOsLevel: 'L5', swOs: 'SwOS / RouterOS',
+      formFactor: 'Desktop', power: 25,
+      features: ['RouterOS L5', '8x 2.5G', '2x SFP+', 'Fanless'],
+      notes: 'Einziger MikroTik Desktop-Switch mit 2.5G — ideal für Wi-Fi 6 Netzwerke',
+    },
     'CRS305': {
       name: 'CRS305-1G-4S+IN', sku: 'CRS305-1G-4S+IN', category: 'crs-sfp', color: '#3B82F6',
       msrp: 159, status: 'current',
@@ -273,6 +284,29 @@ export default function MikroTikPortal() {
       features: ['RouterOS L5', '24x SFP+', '2x QSFP+ 40G', 'Fanless'],
       notes: 'Hochdichte 10G SFP+ Aggregation mit 40G-Uplinks',
     },
+    // ── netPower / netFiber — Branded ISP Fiber Switches ──────────────────
+    'netPower15FR': {
+      name: 'netPower 15FR', sku: 'CRS318-1Fi-15Fr-2S-IN', category: 'crs-fiber', color: '#06B6D4',
+      msrp: 129, status: 'current',
+      ports: '1x 1G RJ45 PoE-in + 15x 100M SFP Fiber + 2x SFP', portCount: 18,
+      ethernet1g: 1, ethernet2_5g: 0, ethernet10g: 0, sfpPlus: 0, sfp28: 0,
+      poe: 'PoE-in (passiv)', poeBudget: 0, layer: 'L2',
+      switchChip: 'Marvell 98DX1005', routerOsLevel: null, swOs: 'SwOS',
+      formFactor: 'Desktop', power: 15,
+      features: ['SwOS', '15x Fiber SFP', 'PoE-in', 'ISP', 'Fanless'],
+      notes: 'ISP-Fiber-Distribution — 15x 100M SFP für FTTx-Netze',
+    },
+    'netFiber9': {
+      name: 'netFiber 9', sku: 'CRS309-1G-8S+IN', category: 'crs-fiber', color: '#06B6D4',
+      msrp: 259, status: 'current',
+      ports: '1x 1G RJ45 + 8x SFP+', portCount: 9,
+      ethernet1g: 1, ethernet2_5g: 0, ethernet10g: 0, sfpPlus: 8, sfp28: 0,
+      poe: null, poeBudget: 0, layer: 'L2+',
+      switchChip: 'Marvell 98DX3236', routerOsLevel: 'L5', swOs: 'SwOS / RouterOS',
+      formFactor: 'Desktop', power: 25,
+      features: ['RouterOS L5', '8x SFP+', 'Fanless', 'ISP'],
+      notes: 'CRS309 unter dem netFiber-Markennamen — 8x SFP+ Aggregation',
+    },
     // ── CRS3xx — 1U Rack Fiber / Mixed ────────────────────────────────────
     'CRS328-4C-20S': {
       name: 'CRS328-4C-20S-4S+RM', sku: 'CRS328-4C-20S-4S+RM', category: 'crs-fiber', color: '#06B6D4',
@@ -325,10 +359,11 @@ export default function MikroTikPortal() {
     all: 'Alle',
     css: 'CSS (SwOS)',
     'css-poe': 'CSS PoE',
+    'crs-2_5g': 'CRS 2.5G',
     'crs-copper': 'CRS Copper',
     'crs-poe': 'CRS PoE',
     'crs-sfp': 'CRS SFP+',
-    'crs-fiber': 'CRS Fiber',
+    'crs-fiber': 'CRS Fiber / ISP',
     'crs-100g': 'CRS 25G / 100G',
   };
 
@@ -508,7 +543,10 @@ export default function MikroTikPortal() {
     'Plug-n-Play': 'bg-green-500', 'Zero Config': 'bg-green-500', 'Vorgepaart': 'bg-green-500',
     'Große Reichweite': 'bg-cyan-600', 'Square Dish': 'bg-blue-500',
     'Disc-Format': 'bg-gray-600',
-    '20x SFP Fiber': 'bg-cyan-700', 'Disc': 'bg-gray-600',
+    '20x SFP Fiber': 'bg-cyan-700',
+    '8x 2.5G': 'bg-emerald-600',
+    '15x Fiber SFP': 'bg-cyan-700',
+    'ISP': 'bg-cyan-800', 'Disc': 'bg-gray-600',
     '802.3af PoE': 'bg-orange-500', 'Großes Gehäuse': 'bg-gray-500',
     'Einzigartiges Design': 'bg-violet-500',
   };
