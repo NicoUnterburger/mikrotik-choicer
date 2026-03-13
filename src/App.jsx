@@ -273,6 +273,18 @@ export default function MikroTikPortal() {
       features: ['RouterOS L5', '24x SFP+', '2x QSFP+ 40G', 'Fanless'],
       notes: 'Hochdichte 10G SFP+ Aggregation mit 40G-Uplinks',
     },
+    // ── CRS3xx — 1U Rack Fiber / Mixed ────────────────────────────────────
+    'CRS328-4C-20S': {
+      name: 'CRS328-4C-20S-4S+RM', sku: 'CRS328-4C-20S-4S+RM', category: 'crs-fiber', color: '#06B6D4',
+      msrp: 549, status: 'current',
+      ports: '4x Combo RJ45/SFP + 20x SFP + 4x SFP+', portCount: 28,
+      ethernet1g: 4, ethernet2_5g: 0, ethernet10g: 0, sfpPlus: 4, sfp28: 0,
+      poe: null, poeBudget: 0, layer: 'L2+',
+      switchChip: 'Marvell 98DX3255', routerOsLevel: 'L5', swOs: 'SwOS / RouterOS',
+      formFactor: '1U Rack', power: 40,
+      features: ['RouterOS L5', '20x SFP Fiber', '4x SFP+', '4x Combo', 'Fanless'],
+      notes: 'Fiber-Distribution-Switch — ideal für Glasfaser-Netzwerke',
+    },
     // ── CRS5xx — 25G / 100G ────────────────────────────────────────────────
     'CRS504': {
       name: 'CRS504-4XQ-IN', sku: 'CRS504-4XQ-IN', category: 'crs-100g', color: '#A855F7',
@@ -316,6 +328,7 @@ export default function MikroTikPortal() {
     'crs-copper': 'CRS Copper',
     'crs-poe': 'CRS PoE',
     'crs-sfp': 'CRS SFP+',
+    'crs-fiber': 'CRS Fiber',
     'crs-100g': 'CRS 25G / 100G',
   };
 
@@ -494,7 +507,8 @@ export default function MikroTikPortal() {
     'Dual-band': 'bg-indigo-500', '5-Port Switch': 'bg-indigo-500',
     'Plug-n-Play': 'bg-green-500', 'Zero Config': 'bg-green-500', 'Vorgepaart': 'bg-green-500',
     'Große Reichweite': 'bg-cyan-600', 'Square Dish': 'bg-blue-500',
-    'Disc-Format': 'bg-gray-600', 'Disc': 'bg-gray-600',
+    'Disc-Format': 'bg-gray-600',
+    '20x SFP Fiber': 'bg-cyan-700', 'Disc': 'bg-gray-600',
     '802.3af PoE': 'bg-orange-500', 'Großes Gehäuse': 'bg-gray-500',
     'Einzigartiges Design': 'bg-violet-500',
   };
