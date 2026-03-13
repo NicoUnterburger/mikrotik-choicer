@@ -353,6 +353,31 @@ export default function MikroTikPortal() {
       features: ['RouterOS L5', '16x 25G', '2x 100G', 'SFP28', 'L3', '1U Rack'],
       notes: 'Hochdichte 25G Aggregation für Datacenter',
     },
+    // ── CRS418 — Switch + Wi-Fi 6 Kombination ─────────────────────────────
+    'CRS418': {
+      name: 'CRS418-8P-8G-2S+5axQ2axQ-RM', sku: 'CRS418-8P-8G-2S+5axQ2axQ-RM', category: 'crs-wifi', color: '#F59E0B',
+      msrp: 499, status: 'current',
+      ports: '8x 1G PoE RJ45 + 8x 1G RJ45 + 1x Mgmt + 2x SFP+', portCount: 19,
+      ethernet1g: 16, ethernet2_5g: 0, ethernet10g: 0, sfpPlus: 2, sfp28: 0,
+      poe: 'PoE+ / 24V passiv', poeBudget: 150, layer: 'L2+',
+      switchChip: 'Marvell 98DX226S', routerOsLevel: 'L5', swOs: 'RouterOS v7',
+      formFactor: '1U Rack', power: 227,
+      wifi: { standard: 'Wi-Fi 6', radio24: '4x4 MIMO 1148 Mbps', radio5: '4x4 MIMO 2400 Mbps' },
+      features: ['RouterOS L5', 'Wi-Fi 6', '8x PoE+', '150W Budget', '4x4 MIMO', 'Dual PSU'],
+      notes: 'Einzigartiger 1U Rack-Switch mit integriertem Wi-Fi 6 — Switch + AP in einem Gerät',
+    },
+    // ── CRS804 — 400G Datacenter ───────────────────────────────────────────
+    'CRS804': {
+      name: 'CRS804-4DDQ-hRM', sku: 'CRS804-4DDQ-hRM', category: 'crs-400g', color: '#DC2626',
+      msrp: 1295, status: 'current',
+      ports: '4x 400G QSFP56-DD + 2x 1G/10G RJ45', portCount: 6,
+      ethernet1g: 2, ethernet2_5g: 0, ethernet10g: 0, sfpPlus: 0, sfp28: 0,
+      poe: null, poeBudget: 0, layer: 'L3',
+      switchChip: 'Marvell 98DX7335', routerOsLevel: 'L5', swOs: 'RouterOS v7',
+      formFactor: '1U Rack', power: 123,
+      features: ['RouterOS L5', '4x 400G', 'QSFP56-DD', 'Dual PSU', 'Hot-Swap', 'L3'],
+      notes: '1,6 Tbps Gesamtkapazität — Breakout auf 1G/10G/25G/50G möglich',
+    },
   };
 
   const switchCategories = {
@@ -364,7 +389,9 @@ export default function MikroTikPortal() {
     'crs-poe': 'CRS PoE',
     'crs-sfp': 'CRS SFP+',
     'crs-fiber': 'CRS Fiber / ISP',
+    'crs-wifi': 'CRS + Wi-Fi',
     'crs-100g': 'CRS 25G / 100G',
+    'crs-400g': 'CRS 400G',
   };
 
   // ─── WIRELESS DATA ───────────────────────────────────────────────────────────
@@ -546,7 +573,11 @@ export default function MikroTikPortal() {
     '20x SFP Fiber': 'bg-cyan-700',
     '8x 2.5G': 'bg-emerald-600',
     '15x Fiber SFP': 'bg-cyan-700',
-    'ISP': 'bg-cyan-800', 'Disc': 'bg-gray-600',
+    'ISP': 'bg-cyan-800',
+    '4x 400G': 'bg-red-700',
+    'QSFP56-DD': 'bg-red-600',
+    'Hot-Swap': 'bg-amber-700',
+    '150W Budget': 'bg-amber-600', 'Disc': 'bg-gray-600',
     '802.3af PoE': 'bg-orange-500', 'Großes Gehäuse': 'bg-gray-500',
     'Einzigartiges Design': 'bg-violet-500',
   };
