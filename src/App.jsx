@@ -21,6 +21,18 @@ export default function MikroTikPortal() {
 
   // ─── ROUTER DATA ────────────────────────────────────────────────────────────
   const routerData = {
+    // ── hEX Serie ──────────────────────────────────────────────────────────
+    'hEX-lite': {
+      name: 'hEX lite', sku: 'RB750r2', category: 'hex', color: '#EF4444',
+      msrp: 22, status: 'current',
+      cpu: 'QCA9531', cpuCores: 1, cpuMhz: 650, ram: 64, flash: 16,
+      ports: '5x 100M RJ45', portCount: 5, sfp: 0, sfpPlus: 0,
+      routingThroughput: '~100 Mbps', ipsecThroughput: '~15 Mbps',
+      poe: 'PoE-in (8–30V passiv)', usb: 1,
+      features: ['RouterOS L4', 'Fanless', 'Kompakt', 'Budget'],
+      notes: 'Günstigster Einstieg — 5x 100M, ideal für einfache NAT-Setups',
+      formFactor: 'Desktop',
+    },
     'hEX': {
       name: 'hEX', sku: 'RB750Gr3', category: 'hex', color: '#EF4444',
       msrp: 59, status: 'current',
@@ -36,18 +48,54 @@ export default function MikroTikPortal() {
       name: 'hEX S', sku: 'RB760iGS', category: 'hex', color: '#EF4444',
       msrp: 79, status: 'current',
       cpu: 'MT7621A', cpuCores: 2, cpuMhz: 880, ram: 256, flash: 16,
-      ports: '5x 1G RJ45 + 1x SFP', portCount: 5, sfp: 1, sfpPlus: 0,
+      ports: '5x 1G RJ45 + 1x SFP', portCount: 6, sfp: 1, sfpPlus: 0,
       routingThroughput: '~1 Gbps', ipsecThroughput: '~470 Mbps',
       poe: 'PoE-out Port 1 (passiv)', usb: 1,
       features: ['RouterOS L4', 'SFP', 'PoE-out', 'Fanless'],
       notes: 'hEX mit SFP-Uplink und PoE-out',
       formFactor: 'Desktop',
     },
+    'hEX-PoE': {
+      name: 'hEX PoE', sku: 'RB960PGS', category: 'hex', color: '#EF4444',
+      msrp: 99, status: 'current',
+      cpu: 'MT7621A', cpuCores: 2, cpuMhz: 880, ram: 128, flash: 16,
+      ports: '5x 1G RJ45 + 1x SFP', portCount: 6, sfp: 1, sfpPlus: 0,
+      routingThroughput: '~1 Gbps', ipsecThroughput: '~470 Mbps',
+      poe: 'PoE-out Ports 2–5 (passiv 24V, 70W gesamt)', usb: 1,
+      features: ['RouterOS L4', 'PoE-out', 'SFP', '4x PoE-out'],
+      notes: 'hEX mit PoE-out auf 4 Ports — ideal für IP-Kameras/APs',
+      formFactor: 'Desktop',
+    },
+    // ── L009 Serie ─────────────────────────────────────────────────────────
+    'L009': {
+      name: 'L009UiGS-2HaxD-IN', sku: 'L009UiGS-2HaxD-IN', category: 'l009', color: '#06B6D4',
+      msrp: 109, status: 'current',
+      cpu: 'IPQ-6010 quad-core ARM 64-bit', cpuCores: 4, cpuMhz: 864, ram: 512, flash: 128,
+      ports: '8x 1G RJ45 + 1x 2.5G SFP Combo', portCount: 9, sfp: 1, sfpPlus: 0,
+      routingThroughput: '~3 Gbps', ipsecThroughput: '~1 Gbps',
+      poe: 'PoE-in (802.3af/at)', usb: 1,
+      features: ['RouterOS L5', 'Wi-Fi 6', '2.5G SFP Combo', '8-Port Switch'],
+      notes: 'Kompakter All-in-One mit Wi-Fi 6 und 2.5G Uplink',
+      formFactor: 'Desktop',
+    },
+    // ── RB3011 ─────────────────────────────────────────────────────────────
+    'RB3011': {
+      name: 'RB3011UiAS-RM', sku: 'RB3011UiAS-RM', category: 'rb3011', color: '#F97316',
+      msrp: 149, status: 'current',
+      cpu: 'IPQ8064 Cortex A15', cpuCores: 2, cpuMhz: 1400, ram: 1024, flash: 128,
+      ports: '10x 1G RJ45 + 1x SFP+', portCount: 11, sfp: 0, sfpPlus: 1,
+      routingThroughput: '~2 Gbps', ipsecThroughput: '~500 Mbps',
+      poe: 'PoE-in (802.3af/at)', usb: 1,
+      features: ['RouterOS L5', 'SFP+', '10-Port', '1U Rack'],
+      notes: 'Kompakter 10-Port Rack-Router mit SFP+',
+      formFactor: '1U Rack',
+    },
+    // ── RB4011 ─────────────────────────────────────────────────────────────
     'RB4011-RM': {
       name: 'RB4011iGS+RM', sku: 'RB4011iGS+RM', category: 'rb4011', color: '#F97316',
       msrp: 159, status: 'current',
       cpu: 'AL21400 Cortex A15', cpuCores: 4, cpuMhz: 1400, ram: 1024, flash: 512,
-      ports: '10x 1G RJ45 + 1x SFP+', portCount: 10, sfp: 0, sfpPlus: 1,
+      ports: '10x 1G RJ45 + 1x SFP+', portCount: 11, sfp: 0, sfpPlus: 1,
       routingThroughput: '~5 Gbps', ipsecThroughput: '~1 Gbps',
       poe: 'PoE-in (18–57V)', usb: 1,
       features: ['RouterOS L5', 'SFP+', '10G Uplink', '1U Rack'],
@@ -58,13 +106,14 @@ export default function MikroTikPortal() {
       name: 'RB4011 WiFi', sku: 'RB4011iGS+5HacQ2HnD-IN', category: 'rb4011', color: '#F97316',
       msrp: 199, status: 'current',
       cpu: 'AL21400 Cortex A15', cpuCores: 4, cpuMhz: 1400, ram: 1024, flash: 512,
-      ports: '10x 1G RJ45 + 1x SFP+', portCount: 10, sfp: 0, sfpPlus: 1,
+      ports: '10x 1G RJ45 + 1x SFP+', portCount: 11, sfp: 0, sfpPlus: 1,
       routingThroughput: '~5 Gbps', ipsecThroughput: '~1 Gbps',
       poe: 'PoE-in (802.3af/at)', usb: 1,
       features: ['RouterOS L5', 'SFP+', 'Wi-Fi 5', 'Desktop'],
       notes: '4-Kern-Router mit Wi-Fi 5 & SFP+',
       formFactor: 'Desktop',
     },
+    // ── RB5009 ─────────────────────────────────────────────────────────────
     'RB5009': {
       name: 'RB5009UG+S+IN', sku: 'RB5009UG+S+IN', category: 'rb5009', color: '#22C55E',
       msrp: 189, status: 'current',
@@ -75,6 +124,41 @@ export default function MikroTikPortal() {
       features: ['RouterOS L5', 'SFP+', '2.5G', 'Fanless', 'Kompakt'],
       notes: 'Bester Allrounder — kompakter Desktop-Router',
       formFactor: 'Desktop',
+    },
+    'RB5009-PoE': {
+      name: 'RB5009UPr+S+IN', sku: 'RB5009UPr+S+IN', category: 'rb5009', color: '#22C55E',
+      msrp: 229, status: 'current',
+      cpu: 'AL32400 Cortex A57', cpuCores: 4, cpuMhz: 1400, ram: 1024, flash: 1024,
+      ports: '7x 1G + 1x 2.5G + 1x SFP+', portCount: 9, sfp: 0, sfpPlus: 1,
+      routingThroughput: '~10 Gbps', ipsecThroughput: '~2,5 Gbps',
+      poe: 'PoE-out alle 8 Ports (802.3af/at + passiv 24V)', usb: 1,
+      features: ['RouterOS L5', 'SFP+', '2.5G', 'PoE-out', '8x PoE-out'],
+      notes: 'RB5009 mit PoE-out auf allen 8 Ports — ideal als PoE-Router',
+      formFactor: 'Desktop',
+    },
+    // ── RB1100 ─────────────────────────────────────────────────────────────
+    'RB1100AHx4': {
+      name: 'RB1100AHx4 Dude Edition', sku: 'RB1100AHx4-DE', category: 'rb1100', color: '#64748B',
+      msrp: 299, status: 'current',
+      cpu: 'AL32400 Cortex A57', cpuCores: 4, cpuMhz: 1400, ram: 1024, flash: 128,
+      ports: '13x 1G RJ45 + 2x SFP+', portCount: 15, sfp: 0, sfpPlus: 2,
+      routingThroughput: '~10 Gbps', ipsecThroughput: '~2 Gbps',
+      poe: 'PoE-in (802.3af/at)', usb: 1,
+      features: ['RouterOS L6', '13x 1G', '2x SFP+', '1U Rack'],
+      notes: 'Hohe Port-Dichte — 13x 1G + 2x SFP+ im 1U Rack',
+      formFactor: '1U Rack',
+    },
+    // ── CCR2xxx ────────────────────────────────────────────────────────────
+    'CCR2004-16G': {
+      name: 'CCR2004-16G-2S+', sku: 'CCR2004-16G-2S+', category: 'ccr', color: '#8B5CF6',
+      msrp: 449, status: 'current',
+      cpu: 'AL32400 Cortex A57', cpuCores: 4, cpuMhz: 1700, ram: 4096, flash: 128,
+      ports: '16x 1G RJ45 + 2x SFP+', portCount: 18, sfp: 0, sfpPlus: 2,
+      routingThroughput: '~15 Gbps', ipsecThroughput: '~4 Gbps',
+      poe: 'Dual PSU optional', usb: 1,
+      features: ['RouterOS L6', 'CCR', '16x 1G', '2x SFP+', '1U Rack'],
+      notes: 'CCR mit 16 Kupfer-Ports — ideal für ISP Edge',
+      formFactor: '1U Rack',
     },
     'CCR2004': {
       name: 'CCR2004-1G-12S+2XS', sku: 'CCR2004-1G-12S+2XS', category: 'ccr', color: '#8B5CF6',
@@ -98,9 +182,29 @@ export default function MikroTikPortal() {
       notes: '16-Kern ISP-Grade Router',
       formFactor: '1U Rack',
     },
+    'CCR2216': {
+      name: 'CCR2216-1G-12XS-2XQ', sku: 'CCR2216-1G-12XS-2XQ', category: 'ccr', color: '#8B5CF6',
+      msrp: 1299, status: 'current',
+      cpu: 'AL73400 quad-core ARM 64-bit', cpuCores: 16, cpuMhz: 2000, ram: 16384, flash: 128,
+      ports: '1x 1G RJ45 + 12x 25G SFP28 + 2x 100G QSFP+', portCount: 15, sfp: 0, sfpPlus: 0,
+      routingThroughput: '~400 Gbps', ipsecThroughput: '~50 Gbps',
+      poe: 'Dual PSU', usb: 1,
+      features: ['RouterOS L6', 'CCR', '12x 25G', '2x 100G', 'Dual PSU', '1U Rack'],
+      notes: 'High-End CCR — 400 Gbps Routing, 25G/100G Backbone',
+      formFactor: '1U Rack',
+    },
   };
 
-  const routerCategories = { all: 'Alle', hex: 'hEX Serie', rb4011: 'RB4011', rb5009: 'RB5009', ccr: 'Cloud Core Router' };
+  const routerCategories = {
+    all: 'Alle',
+    hex: 'hEX Serie',
+    l009: 'L009',
+    rb3011: 'RB3011',
+    rb4011: 'RB4011',
+    rb5009: 'RB5009',
+    rb1100: 'RB1100',
+    ccr: 'Cloud Core Router',
+  };
 
   // ─── SWITCH DATA ─────────────────────────────────────────────────────────────
   const switchData = {
@@ -570,6 +674,15 @@ export default function MikroTikPortal() {
     'Plug-n-Play': 'bg-green-500', 'Zero Config': 'bg-green-500', 'Vorgepaart': 'bg-green-500',
     'Große Reichweite': 'bg-cyan-600', 'Square Dish': 'bg-blue-500',
     'Disc-Format': 'bg-gray-600',
+    '4x PoE-out': 'bg-orange-500',
+    '8x PoE-out': 'bg-orange-600',
+    '10-Port': 'bg-gray-500',
+    '13x 1G': 'bg-gray-500',
+    '2.5G SFP Combo': 'bg-teal-500',
+    '8-Port Switch': 'bg-indigo-500',
+    '12x 25G': 'bg-violet-600',
+    '2x 100G': 'bg-red-600',
+    '16x 1G': 'bg-gray-500',
     '20x SFP Fiber': 'bg-cyan-700',
     '8x 2.5G': 'bg-emerald-600',
     '15x Fiber SFP': 'bg-cyan-700',
@@ -830,10 +943,10 @@ export default function MikroTikPortal() {
             {/* Recommendations */}
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
               {[
-                { label: 'Budget Wired', key: 'hEX', sub: 'hEX ~59 €' },
+                { label: 'Günstigster', key: 'hEX-lite', sub: 'hEX lite ~22 €' },
                 { label: 'Bester Allrounder', key: 'RB5009', sub: 'RB5009 ~189 €' },
-                { label: 'Hoher Durchsatz', key: 'RB4011-RM', sub: 'RB4011 ~159 €' },
-                { label: 'ISP-Grade', key: 'CCR2116', sub: 'CCR2116 ~799 €' },
+                { label: 'PoE-out Router', key: 'RB5009-PoE', sub: 'RB5009UPr ~229 €' },
+                { label: 'ISP-Grade', key: 'CCR2216', sub: 'CCR2216 ~1.299 €' },
               ].map(({ label, key, sub }) => (
                 <button key={key} onClick={() => setSelectedRouter(key)}
                   className="bg-gray-800 rounded-lg p-3 text-left hover:bg-gray-700 transition-colors border border-gray-700 hover:border-red-700">
